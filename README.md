@@ -6,8 +6,17 @@ MediaWiki helps you collect and organize knowledge and make it available to peop
 # Note: setup reference link https://www.mediawiki.org/wiki/Manual:Running_MediaWiki_on_Red_Hat_Linux
 
 1. Build a docker image and push to docker repository.
+ ```bash
+ docker build “dockerepo/reponame:latest” .
+ ```
 2. Edit and add credentials to sect.yaml and apply on the kubernetes cluster.
+   ```bash
+   kubectl apply -f sect.yaml
+   ```
 3. Apply deployment manifest to run mediawiki pod.
+  ```bash
+  kubectl apply -f mediawiki.yaml
+  ```
 4. You can expose service to Loadbalancer or use it internally.
 5. Run URL you will get a wikimedia installation page. Follow Generate LocalSetting.php to complete the setup.
 
