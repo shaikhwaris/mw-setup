@@ -10,12 +10,12 @@ MediaWiki helps you collect and organize knowledge and make it available to peop
  docker build “dockerepo/reponame:latest” .
  ```
 2. Edit and add credentials to sect.yaml and apply on the kubernetes cluster.
-   ```bash
-   kubectl apply -f sect.yaml
+ ```bash
+ kubectl apply -f sect.yaml
    ```
 3. Apply deployment manifest to run mediawiki pod.
-  ```bash
-  kubectl apply -f mediawiki.yaml
+ ```bash
+ kubectl apply -f mediawiki.yaml
   ```
 4. You can expose service to Loadbalancer or use it internally.
 5. Run URL you will get a wikimedia installation page. Follow Generate LocalSetting.php to complete the setup.
