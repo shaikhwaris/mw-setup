@@ -3,7 +3,7 @@
 MediaWiki helps you collect and organize knowledge and make it available to people. It's powerful, multilingual, free and open, extensible, customizable, reliable, and free of charge.
 
 # Setup
-# Note: setup reference link https://www.mediawiki.org/wiki/Manual:Running_MediaWiki_on_Red_Hat_Linux
+## Note: setup reference link https://www.mediawiki.org/wiki/Manual:Running_MediaWiki_on_Red_Hat_Linux
 
 1. Build a docker image and push to docker repository.
  ```bash
