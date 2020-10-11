@@ -30,7 +30,7 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "mediawiki.serviceAccountName" . }}
+      #      serviceAccountName: {{ include "mediawiki.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -51,10 +51,13 @@ spec:
             httpGet:
               path: /
               port: http
+          envFrom:              
+          - secretRef:
+              name: mediawiki-secret              
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
         - name: mysql
-          image: "{{ .Values.image1.repository }}:{{ .Values.image.tag }}"
+          image: "{{ .Values.image1.repository }}:{{ .Values.image1.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           envFrom:
           - secretRef:
@@ -69,7 +72,7 @@ spec:
       volumes:
       - name: data
         hostPath:
-          path: .data
+          path: /opt/mediawiki/data
       restartPolicy: Always
       {{- with .Values.nodeSelector }}
       nodeSelector:
