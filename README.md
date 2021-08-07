@@ -1,4 +1,4 @@
-# mw-setup
+# MW-SETUP
 # wikimedia
 MediaWiki helps you collect and organize knowledge and make it available to people. It's powerful, multilingual, free and open, extensible, customizable, reliable, and free of charge.
 
